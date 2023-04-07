@@ -9,23 +9,23 @@ root = tk.Tk()
 
 userName = tk.StringVar()
 
-# input_frame = ttk.Frame(root, padding=(20, 20, 20,0))
-# input_frame.pack(fill="both")
+input_frame = ttk.Frame(root, padding=(20, 10, 20,0))
+input_frame.pack(fill="both")
 
-nameLabel = ttk.Label(root, text="Name: ")
+nameLabel = ttk.Label(input_frame, text="Name: ")
 nameLabel.pack(side="left", padx=(0, 10))
-nameEntry = ttk.Entry(root, width=15, textvariable=userName)
+nameEntry = ttk.Entry(input_frame, width=15, textvariable=userName)
 nameEntry.pack(side="left")
 nameEntry.focus()
 
+buttons = ttk.Frame(root, padding=(20,10))
+buttons.pack(fill="both")
 
-greetButton = ttk.Button(root, text="Greet", command=greet)
-# greetButton.pack(side="left", fill="x", expand=True)
+greetButton = ttk.Button(buttons, text="Greet", command=greet)
 greetButton.pack(side="left")
 
 
-quitButton = ttk.Button(root, text="Quit", command=root.destroy)
-# quitButton.pack(side="left", fill="x", expand=True)
+quitButton = ttk.Button(buttons, text="Quit", command=root.destroy)
 quitButton.pack(side="right")
 
 root.mainloop()
